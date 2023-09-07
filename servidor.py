@@ -10,7 +10,7 @@ dt=load('model_ml/dt1.joblib')
 servidorWeb = Flask(__name__)
 
 @servidorWeb.route("/holamundo", methods=['GET'])
-def modeloForm():
+def holamundo():
         return render_template('pagina1.html')
 
 # Envío de datos a través de JSON
@@ -32,7 +32,7 @@ def modeloPrediccion():
 @servidorWeb.route("/modeloForm", methods=['POST'])
 def modeloForm():
         # Procesarlos datos de entrada
-        contenido = request.json
+        contenido = request.form
         print(contenido)
         datosEntrada = np.array([ 0.88, 0, 2.6, 0.098, 25, 67, 0.9968, 1, 0.4,
                 contenido['pH'],
