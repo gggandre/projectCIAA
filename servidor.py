@@ -15,7 +15,7 @@ def modeloForm():
 
 # Envío de datos a través de JSON
 @servidorWeb.route("/modelo", methods=['POST'])
-def modeloForm():
+def modeloPrediccion():
         # Procesarlos datos de entrada
         contenido = request.json
         print(contenido)
@@ -32,7 +32,7 @@ def modeloForm():
 @servidorWeb.route("/modeloForm", methods=['POST'])
 def modeloForm():
         # Procesarlos datos de entrada
-        contenido = request.form
+        contenido = request.json
         print(contenido)
         datosEntrada = np.array([ 0.88, 0, 2.6, 0.098, 25, 67, 0.9968, 1, 0.4,
                 contenido['pH'],
